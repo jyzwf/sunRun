@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app='runApp'>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>阳光长跑</title>
+    <link rel="stylesheet" href="resource/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resource/sunrun/css/index.css">
+</head>
+<body>
+	
+	<div class='mainRoute' ui-view></div>
+	
+
+	<script type="text/javascript" src='resource/sunrun/lib/dist/js/jquery.js'></script>
+	<script type="text/javascript">
+
+				function onBridgeReady(){
+     WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
+
+    
+
+              //平台、设备和操作系统 
+        var system = { 
+            win: false, 
+            mac: false, 
+            xll: false, 
+            ipad:false 
+        }; 
+        //检测平台 
+        var p = navigator.platform; 
+        system.win = p.indexOf("Win") == 0; 
+        system.mac = p.indexOf("Mac") == 0; 
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
+        system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false; 
+        //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面 
+        if (system.win || system.mac || system.xll||system.ipad) //电脑
+        { 
+                var max_height=0;
+                $('.thumbnail').each(function(){
+
+                    max_height=$(this).height() > max_height?$(this).height():max_height;
+                }).height(max_height);
+        } 
+        else //手机
+        { 
+          
+        }
+
+	</script>
+
+	
+	<script type="text/javascript" src='resource/sunrun/lib/dist/js/echarts.common.min.js'></script>
+	<script type="text/javascript" src='resource/sunrun/lib/dist/js/angular.min.js'></script>
+	<script type="text/javascript" src='resource/sunrun/lib/dist/js/angular-ui-router.js'></script>
+	<script type="text/javascript" src='resource/sunrun/js/app.js'></script>
+	<script type="text/javascript" src='resource/sunrun/js/controller.js'></script>
+	<script type="text/javascript" src='resource/sunrun/js/directive.js'></script>
+	<script type="text/javascript" src='resource/sunrun/js/service.js'></script>
+
+	
+
+</body>
+</html>

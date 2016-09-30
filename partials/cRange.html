@@ -1,0 +1,79 @@
+<section>
+
+	
+
+	<div class='blank'>
+
+		<img class='crow' src="resource/sunrun/image/crow.png" />
+
+		<img class='useImg transform-3d' src="resource/fans_headimg/{{!cFirst.headimg_name ? default : cFirst.headimg_name}}.jpg" alt="" />
+
+		<p class='headerD'>
+
+			<span >{{ cFirst.name }}</span>
+
+			<br>
+
+			<small >占据了封面</small>
+
+		</p>
+
+		<div class="light transform-3d">
+
+			<div class="light1"></div>
+
+			<div class="light2"></div>
+
+			<div class="light3"></div>
+
+			<div class="light4"></div>
+
+			<div class="light5"></div>
+
+			<div class="light6"></div>
+
+			<div class="light7"></div>
+
+		</div>
+
+	</div>
+
+	<div class='content'>
+
+	
+
+	<div id='first' class='range'>
+
+		<span class='num'></span>
+
+		<img  class='img' src="resource/fans_headimg/{{!cMe.headimg_name ? default : cMe.headimg_name}}.jpg" alt="">
+
+		<p class='Special'><span class='nicknameSpecial'>{{ cMe.name }}</span><span class='nowRange'>次数:{{cMe.my_number_rank}}名  里程:{{cMe.my_distance_rank}}名</span></p>
+
+		<span class='mount'>{{cMe.number}}<span class='medals'></span></span>
+
+	</div>
+
+	<div class='rangeList'>
+		<p ng-repeat = '(index,list) in cList' class='range'>
+
+			<span class='num'>{{index}}</span>
+
+			<img  class='img' src="resource/fans_headimg/{{!list.headimg_name ? default : list.headimg_name}}.jpg" alt="">
+
+			<span class='nickname'>{{ list.name }}</span>
+
+			<span class='mount'>{{ list.num }}<img class='medals' src='resource/sunrun/image/medals{{index>3? 4 :index}}.jpg'></span>
+
+		</p>
+
+
+	</div>
+
+
+
+</div>
+
+
+
+</section>

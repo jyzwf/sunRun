@@ -1,0 +1,103 @@
+
+
+<div class="active" id="home">
+
+  <!-- <a class='zx' href="www.baidu.com"><img src="image/cat.jpg" alt=""></a> -->
+
+<div class='col-xs-12'>
+
+
+
+<div id='toHeader'>
+
+      <h2 class="text-center">我的跑步记录</h2>
+
+      <div class='time'>
+
+        <p class="text-center">跑步时间</p>
+
+        <p class='text-center'>周一至周五:早上6:45-7:45, 下午15:30-18:00<br/>周末:下午15:30-18:00</p>
+
+      </div>
+
+
+
+</div>
+
+
+
+
+
+    <div class="activeList table-responsive">
+
+    <table  class="table table-hover table-condensed table-bordered table-striped">
+
+        <thead class=''>
+
+          <tr>
+
+              <th>#</th>
+
+              <th>日期</th>
+
+              <th>时段</th>
+
+              <th>里程(m)</th>
+
+              <th>速度(m/s)</th>
+
+              <th>val</th>
+
+          </tr>
+
+        
+
+        
+
+        </thead>
+
+
+
+        <tbody>
+
+          <tr ng-repeat='item in items'>
+
+              <td>{{ item[0]}}</td>
+
+              <td class='day'>{{ item[1]}}</td>
+
+              <td class='noon'>{{ item[2]}}</td>
+
+              <td class='dis'>{{ item[3]}}</td>
+
+              <td class='speed'>{{ item[4]}}</td>
+
+              <td ><span ng-if = 'item[5]' class="glyphicon glyphicon-ok"></span> <span ng-if = '!item[5]' class="glyphicon glyphicon-remove"></span></td>
+
+          </tr>
+
+
+
+
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+
+
+<footer align="center">
+
+
+
+  Copyright © 杭电助手
+
+
+
+</footer>
+
+</div>
+
+</div>

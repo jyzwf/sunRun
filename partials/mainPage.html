@@ -1,0 +1,18 @@
+<ul>
+    <a  ui-sref=".myRun"><li id='run' >长跑</li></a>
+    <a  ng-href="#/mainPage/countRange/cRange"><li id='range' >排名</li></a>
+    <a  ng-href="#/mainPage/runTab/1"><li id='detail'>详情</li></a>
+    <li id="add" class='glyphicon glyphicon-plus' ng-click='showHide=true' ></li>
+</ul>
+
+<div ng-show='showHide' ng-click='showHideFn()'  class="select">
+  <div class='week'>
+    <a ng-href="#/mainPage/countRange/cRange"><p ng-show="changeRange" ng-click='showDetail()'>名次排名</p></a>
+    <a ng-href="#/mainPage/countRange/mRange"><p ng-show="changeRange" ng-click='showDetail()'>里程排名</p></a>
+    <a ng-href="#/mainPage/runTab/1"><p ng-show="changeDetail" ng-click='showDetail()'>最近1周</p></a>
+    <a ng-href="#/mainPage/runTab/2"><p ng-show="changeDetail" ng-click='showDetail()'>最近2周</p></a>
+    <a ng-href="#/mainPage/runTab/3"><p ng-show="changeDetail" ng-click='showDetail()'>全部记录</p></a>
+  </div>
+</div>
+
+<div ui-view class='mainRoute'></div>
